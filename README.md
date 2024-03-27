@@ -1,6 +1,6 @@
 # SpaceSS
 
-![SpaceSS Logo](https://raw.githubusercontent.com/k4scripts/backdoor.exe/v8/logo_outlined.png)
+![SpaceSS Logo](https://github.com/paniniscop/backdoorScanner/blob/main/SpaceSS.jpg)
 
 ## Introduction
 
