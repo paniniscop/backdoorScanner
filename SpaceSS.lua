@@ -25,7 +25,7 @@ if genv.backdoorexe then
 end
 
 --// UI \\--
-local screenGui, uiRequire = loadstring(game:HttpGet("https://raw.githubusercontent.com/iK4oS/backdoor.exe/v8/src/ui.lua"))()
+local screenGui, uiRequire = loadstring(game:HttpGet("https://raw.githubusercontent.com/iK4oS/backdoor.exe/indev/ui.lua"))()-- i replaced the url beacause the old url in the code disconnect the player when you use it
 local alertLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/uniquadev/GuiToLuaConverter/main/PluginPlace/src/alerts.lua"))()
 
 local ui = uiRequire(screenGui.main);
@@ -271,7 +271,6 @@ local function scan(remotes, delayFactor)
         if gateway then
             -- store backdoor
             backdoor = gateway;
-            connection:Disconnect();
         end;
     end);
     ui.title.Text = TITLE .. " [Testing]";
@@ -356,10 +355,7 @@ local function execute(code, gateway, canDebug, disableAlerts)
         -- force disconnect after 60 seconds (i deleted it)
     
         -- this will fire completed event just in case is needed with non-debug mode
-        task.delay(0.1, function()
-            completed:Fire(true);
-        end);
-    end;
+
     -- execute code
     gateway:Execute(code);
     return completed.Event;
